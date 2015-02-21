@@ -38,10 +38,6 @@ module AdvancedBotDetection
       type?(:checker, :crawler, :spam)
     end
 
-    def mobile?
-      type?(:tablet, :phone)
-    end
-
     def browser?
       type? :browser
     end
@@ -66,12 +62,20 @@ module AdvancedBotDetection
       type? :spam
     end
 
+    def mobile?
+      type?(:tablet, :phone, :mobile_browser)
+    end
+
     def tablet?
       type? :tablet
     end
 
     def phone?
       type? :phone
+    end
+
+    def mobile_browser?
+      type? :mobile_browser
     end
 
     private

@@ -2,17 +2,24 @@ module AdvancedBotDetection
   class MobileAgentsParser
     require 'json'
 
-    def initialize(url)
-      @url = url
-      @mobile_hash = JSON.load(open('https://raw.githubusercontent.com/serbanghita/Mobile-Detect/master/Mobile_Detect.json'))
-      binding.pry
+    def initialize
+      url = 'https://raw.githubusercontent.com/serbanghita/Mobile-Detect/master/Mobile_Detect.json'
+      @mobile_hash = JSON.load(open(url))
     end
 
     def agents
       agents = []
+      parse_browsers(agents)
       parse_tablets(agents)
       parse_phones(agents)
       agents
+    end
+
+    def parse_browsers(agents)
+      phones = @mobile_hash["uaMatch"]["browsers"].each_pair { |k, v| puts "#{k}: #{v}" }
+      phones.each_pair do |name, match|
+        agents << parse_agent('mobile_browser', name, match)
+      end
     end
 
     def parse_phones(agents)
@@ -31,7 +38,7 @@ module AdvancedBotDetection
 
     def parse_agent(type,name,match)
       {
-        'string' => match.gsub('\\b', '\b'),
+        'string' => match.gsub('\\b', '\b').gsub('/','\/'),
         'string_match' => 'regex', # exact or regex
         'types' => type,
         'description' => name
