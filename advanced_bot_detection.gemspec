@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = 'jeffery.yeary@gmail.com'
   s.homepage    = 'https://github.com/usbsnowcrash/advanced-bot-detection'
   s.summary     = 'advanced bot detection'
-  s.description = 'Detects bots, spiders, crawlers, browsers, mobile devices and classify them'
+  s.description = 'Detects bots, spiders, crawlers, browsers, mobile devices and classifies them'
   s.license     = 'MIT'
 
   s.files        = Dir['{lib}/**/*', 'config/**/*', 'MIT-LICENSE', '*.md']
