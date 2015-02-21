@@ -16,29 +16,29 @@ module AdvancedBotDetection
     end
 
     def parse_browsers(agents)
-      phones = @mobile_hash["uaMatch"]["browsers"].each_pair { |k, v| puts "#{k}: #{v}" }
+      phones = @mobile_hash['uaMatch']['browsers'].each_pair { |k, v| puts "#{k}: #{v}" }
       phones.each_pair do |name, match|
         agents << parse_agent('mobile_browser', name, match)
       end
     end
 
     def parse_phones(agents)
-      phones = @mobile_hash["uaMatch"]["phones"].each_pair { |k, v| puts "#{k}: #{v}" }
+      phones = @mobile_hash['uaMatch']['phones'].each_pair { |k, v| puts "#{k}: #{v}" }
       phones.each_pair do |name, match|
         agents << parse_agent('phone', name, match)
       end
     end
 
     def parse_tablets(agents)
-      tablets = @mobile_hash["uaMatch"]["tablets"].each_pair { |k, v| puts "#{k}: #{v}" }
+      tablets = @mobile_hash['uaMatch']['tablets'].each_pair { |k, v| puts "#{k}: #{v}" }
       tablets.each_pair do |name, match|
         agents << parse_agent('tablet', name, match)
       end
     end
 
-    def parse_agent(type,name,match)
+    def parse_agent(type, name, match)
       {
-        'string' => match.gsub('\\b', '\b').gsub('/','\/'),
+        'string' => match.gsub('\\b', '\b').gsub('/', '\/'),
         'string_match' => 'regex', # exact or regex
         'types' => type,
         'description' => name

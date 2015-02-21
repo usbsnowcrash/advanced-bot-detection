@@ -7,9 +7,7 @@ module AdvancedBotDetection
       @agents = YAML.load(open(url))
     end
 
-    def agents
-      @agents
-    end
+    attr_reader :agents
 
     def to_array
       agents
