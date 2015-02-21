@@ -31,13 +31,12 @@ module AdvancedBotDetection
     end
 
     def human?
-      type? :browser, :downloader, :proxy
+      type?(:browser, :downloader, :proxy, :tablet, :phone)
     end
 
     def bot?
-      type? :checker, :crawler, :spam
+      type?(:checker, :crawler, :spam)
     end
-    alias_method :replicant?, :bot?
 
     def browser?
       type? :browser
@@ -61,6 +60,22 @@ module AdvancedBotDetection
 
     def spam?
       type? :spam
+    end
+
+    def mobile?
+      type?(:tablet, :phone, :mobile_browser)
+    end
+
+    def tablet?
+      type? :tablet
+    end
+
+    def phone?
+      type? :phone
+    end
+
+    def mobile_browser?
+      type? :mobile_browser
     end
 
     private

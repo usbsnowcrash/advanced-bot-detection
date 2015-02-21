@@ -1,23 +1,11 @@
 module ActionDispatch
   class Request
-    def human?
-      agent_tester.human?
-    end
-
     def bot?
       agent_tester.bot?
     end
 
-    def browser?
-      agent_tester.browser?
-    end
-
     def checker?
       agent_tester.checker?
-    end
-
-    def downloader?
-      agent_tester.downloader?
     end
 
     def proxy?
@@ -30,6 +18,18 @@ module ActionDispatch
 
     def spam?
       agent_tester.spam?
+    end
+
+    def mobile?
+      agent_tester.mobile?
+    end
+
+    def tablet?
+      agent_tester.tablet?
+    end
+
+    def phone?
+      agent_tester.phone?
     end
 
     private

@@ -1,5 +1,7 @@
 require 'advanced_bot_detection/test'
 require 'advanced_bot_detection/user_agents_parser'
+require 'advanced_bot_detection/mobile_agents_parser'
+require 'advanced_bot_detection/usbsnowcrash_parser'
 require 'advanced_bot_detection/engine' if defined?(Rails)
 
 module AdvancedBotDetection
@@ -16,7 +18,6 @@ module AdvancedBotDetection
     def bot?(user_agent_string)
       test(user_agent_string).bot?
     end
-    alias_method :replicant?, :bot?
 
     def browser?(user_agent_string)
       test(user_agent_string).browser?
