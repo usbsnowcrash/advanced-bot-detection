@@ -2,6 +2,8 @@ Advanced Bot Detection
 =============
 [![Code Climate](https://codeclimate.com/github/usbsnowcrash/advanced-bot-detection/badges/gpa.svg)](https://codeclimate.com/github/usbsnowcrash/advanced-bot-detection)
 
+[![Gem Version](https://badge.fury.io/rb/advanced_bot_detection.svg)](http://badge.fury.io/rb/advanced_bot_detection)
+
 Advanced bot detection relies on [user agent](http://en.wikipedia.org/wiki/User_agent) list for its detection. It can easily tell you if a request is coming from a crawler, spider or bot. This can be especially helpful in analytics such as page hit tracking.
 
 Installation
