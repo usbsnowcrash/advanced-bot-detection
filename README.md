@@ -8,14 +8,14 @@ Advanced bot detection relies on [user agent](http://en.wikipedia.org/wiki/User_
 
 Installation
 ============
-`gem install advanced-bot-detection`
+`gem install advanced_bot_detection`
 
 Configuration
 =============
 
 A YAML file is used to match [user agent strings](http://simplyfast.info/browser) to their types.
 
-If you'd like to use an [updated list](http://www.user-agents.org/) or make your own customizations, run `rake advanced-bot-detection:import_user_agents`. This will download a user_agents.yml file into your Rails `/config` directory.
+If you'd like to use an [updated list](http://www.user-agents.org/) or make your own customizations, run `rake advanced_bot_detection:import_user_agents`. This will download a user_agents.yml file into your Rails `/config` directory.
 
 To use [Regular Expression](http://en.wikipedia.org/wiki/Regular_expression) matching, just set `string_match: regex` in your user_agent entry. The first match will be used so you should probably put your Regular Expression entries toward the bottom of the file.
 
@@ -37,8 +37,9 @@ All of the above examples accept `human?`, `bot?`,`mobile?`, `phone?`,`tablet?`,
 FAQ
 ===
 __Q:__ __My browser isn't being matched__
-__A:__ The list is being pulled from [user-agents.org](http://www.user-agents.org).
-If you'd  like to have entries added to the list please [create a new issue](https://github.com/biola/Voight-Kampff/issues/new) or send me a [pull request](https://github.com/biola/Voight-Kampff/pulls). And if you know of a better source for this sort of data, please [let me know](mailto:adam@obledesign.com).
+
+__A:__ The current list is being pulled from [user-agents.org](http://www.user-agents.org), [PHP Mobile Detect](https://github.com/serbanghita/Mobile-Detect) and [my own list](https://github.com/usbsnowcrash/advanced-bot-detection/blob/master/custom-add-ons.yml)
+If you'd  like to have entries added to the list please [create a new issue](https://github.com/usbsnowcrash/advanced-bot-detection/issues/new) or send me a [pull request](https://github.com/usbsnowcrash/advanced-bot-detection/pulls). And if you know of a better source for this sort of data, please [let me know](mailto:jeffery.yeary@gmail.com).
 
 
 RUNNING TESTS?
