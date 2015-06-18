@@ -30,16 +30,16 @@ module AdvancedBotDetection
       end
     end
 
+    def browser?
+      type? :browser
+    end
+
     def human?
       type?(:browser, :downloader, :proxy, :tablet, :phone)
     end
 
     def bot?
       type?(:checker, :crawler, :spam)
-    end
-
-    def browser?
-      type? :browser
     end
 
     def checker?
