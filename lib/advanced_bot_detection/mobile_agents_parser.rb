@@ -15,6 +15,17 @@ module AdvancedBotDetection
       agents
     end
 
+    def to_array
+      agents
+    end
+    alias_method :to_a, :to_array
+
+    def to_yaml
+      agents.to_yaml
+    end
+
+    private
+
     def parse_browsers(agents)
       phones = @mobile_hash['uaMatch']['browsers'].each_pair { |k, v| puts "#{k}: #{v}" }
       phones.each_pair do |name, match|
@@ -43,15 +54,6 @@ module AdvancedBotDetection
         'types' => type,
         'description' => name
       }
-    end
-
-    def to_array
-      agents
-    end
-    alias_method :to_a, :to_array
-
-    def to_yaml
-      agents.to_yaml
     end
   end
 end

@@ -20,5 +20,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'httpclient', '~> 2.2'
   s.add_dependency 'nokogiri', '~> 1.6'
   s.add_dependency 'json', '~> 1.8'
-  s.add_development_dependency 'minitest', '~> 4.7'
+  s.add_development_dependency 'rspec', '~> 3.0'
+  s.add_development_dependency 'codeclimate-test-reporter'
+  s.add_development_dependency 'pry'
+  s.add_development_dependency 'webmock', '~> 1.21'
 end

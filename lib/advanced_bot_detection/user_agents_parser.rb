@@ -19,15 +19,6 @@ module AdvancedBotDetection
       agents
     end
 
-    def parse_agent(agent)
-      {
-        'string' => agent.xpath('String').text,
-        'string_match' => 'exact',
-        'types' => agent.xpath('Type').text.split.map { |t| clarify_type(t) }.compact,
-        'description' => agent.xpath('Description').text
-      }
-    end
-
     def to_array
       agents
     end
@@ -38,6 +29,15 @@ module AdvancedBotDetection
     end
 
     private
+
+    def parse_agent(agent)
+      {
+        'string' => agent.xpath('String').text,
+        'string_match' => 'exact',
+        'types' => agent.xpath('Type').text.split.map { |t| clarify_type(t) }.compact,
+        'description' => agent.xpath('Description').text
+      }
+    end
 
     def clarify_type(type)
       @types[type.downcase.to_sym]

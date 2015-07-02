@@ -8,18 +8,20 @@ module AdvancedBotDetection
     def initialize(user_agent_string)
       load_agents
       @user_agent_string = user_agent_string
-      @types = Array(agent['types']).map(&:to_sym)
-      @description = agent['description']
+
+      @types = agent.map do |a|
+        Array(a['types']).map(&:to_sym)
+      end.flatten
     end
 
     def agent
-      @agent ||= Test.agents.find do |agent|
+      @agents ||= Test.agents.select do |agent|
         if agent['string_match'] == 'regex'
           @user_agent_string =~ Regexp.new(agent['string'], Regexp::IGNORECASE)
         else
           @user_agent_string.to_s.casecmp(agent['string'].to_s) == 0
         end
-      end || {}
+      end || []
     end
 
     def type?(*types)
@@ -30,16 +32,16 @@ module AdvancedBotDetection
       end
     end
 
+    def browser?
+      type? :browser
+    end
+
     def human?
       type?(:browser, :downloader, :proxy, :tablet, :phone)
     end
 
     def bot?
       type?(:checker, :crawler, :spam)
-    end
-
-    def browser?
-      type? :browser
     end
 
     def checker?
