@@ -2,6 +2,7 @@ require 'pry'
 require 'codeclimate-test-reporter'
 require 'advanced_bot_detection'
 require 'support/constants.rb'
+require 'webmock/rspec'
 
 CodeClimate::TestReporter.start
 

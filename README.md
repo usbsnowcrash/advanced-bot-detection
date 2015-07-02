@@ -1,6 +1,7 @@
 Advanced Bot Detection
 =============
 [![Code Climate](https://codeclimate.com/github/usbsnowcrash/advanced-bot-detection/badges/gpa.svg)](https://codeclimate.com/github/usbsnowcrash/advanced-bot-detection)
+[![Test Coverage](https://codeclimate.com/github/usbsnowcrash/advanced-bot-detection/badges/coverage.svg)](https://codeclimate.com/github/usbsnowcrash/advanced-bot-detection/coverage)
 [![Gem Version](https://badge.fury.io/rb/advanced_bot_detection.svg)](http://badge.fury.io/rb/advanced_bot_detection)
 [![Build Status](https://travis-ci.org/usbsnowcrash/advanced-bot-detection.svg?branch=master)](https://travis-ci.org/usbsnowcrash/advanced-bot-detection)
 
