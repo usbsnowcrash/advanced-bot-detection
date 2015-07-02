@@ -42,6 +42,9 @@ __Q:__ __My browser isn't being matched__
 __A:__ The current list is being pulled from [user-agents.org](http://www.user-agents.org), [PHP Mobile Detect](https://github.com/serbanghita/Mobile-Detect) and [my own list](https://github.com/usbsnowcrash/advanced-bot-detection/blob/master/custom-add-ons.yml)
 If you'd  like to have entries added to the list please [create a new issue](https://github.com/usbsnowcrash/advanced-bot-detection/issues/new) or send me a [pull request](https://github.com/usbsnowcrash/advanced-bot-detection/pulls). And if you know of a better source for this sort of data, please [let me know](mailto:jeffery.yeary@gmail.com).
 
+CAUTION
+===
+This gem ships with a default list that does a pretty good job with bots and a really good job with mobile devices but I wouldn't trust the others (like browser?)
 
 RUNNING TESTS?
 =============
