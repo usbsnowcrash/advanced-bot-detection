@@ -49,10 +49,10 @@ module AdvancedBotDetection
 
     def parse_agent(type, name, match)
       {
-          'string' => match.gsub('\\b', '\b').gsub('/', '\/'),
-          'string_match' => 'regex', # exact or regex
-          'types' => type,
-          'description' => name
+        'string' => match.gsub('\\b', '\b').gsub('/', '\/'),
+        'string_match' => 'regex', # exact or regex
+        'types' => type,
+        'description' => name
       }
     end
   end

@@ -15,7 +15,7 @@ module AdvancedBotDetection
     end
 
     def agent
-      @agents ||= Test.agents.find_all do |agent|
+      @agents ||= Test.agents.select do |agent|
         if agent['string_match'] == 'regex'
           @user_agent_string =~ Regexp.new(agent['string'], Regexp::IGNORECASE)
         else

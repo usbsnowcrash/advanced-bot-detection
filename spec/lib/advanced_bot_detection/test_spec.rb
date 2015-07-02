@@ -4,8 +4,10 @@ RSpec.describe AdvancedBotDetection::Test do
 
   describe '#human?' do
     subject { AdvancedBotDetection::Test.new(HUMAN) }
-    before { expect(subject).to receive(:type?).with(:browser, :downloader, :proxy, :tablet, :phone)
-                                               .and_call_original}
+    before do
+      expect(subject).to receive(:type?).with(:browser, :downloader, :proxy, :tablet, :phone)
+                                               .and_call_original
+    end
     it { expect(subject.human?).to be_truthy }
   end
 
