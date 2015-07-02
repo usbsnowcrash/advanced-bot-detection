@@ -2,8 +2,6 @@ require 'spec_helper'
 
 RSpec.describe AdvancedBotDetection::Test do
 
-
-
   describe '#browser?' do
     context 'when the user agent looks like a browser' do
       subject { AdvancedBotDetection::Test.new(DESKTOP_BROWSER) }
