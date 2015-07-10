@@ -6,7 +6,7 @@ Encoding:
   Enabled: false
 
 LineLength:
-  Max: 120
+  Max: 160
 
 CommentAnnotation:
   Enabled: false

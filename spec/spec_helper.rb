@@ -1,11 +1,17 @@
-require 'pry'
+require 'webmock/rspec'
+WebMock.disable_net_connect!(allow: 'codeclimate.com')
+
+require 'simplecov'
 require 'codeclimate-test-reporter'
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    CodeClimate::TestReporter::Formatter
+]
+SimpleCov.start
+
+require 'pry'
 require 'advanced_bot_detection'
 require 'support/constants.rb'
-require 'webmock/rspec'
-
-CodeClimate::TestReporter.start
-
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
@@ -18,10 +24,7 @@ RSpec.configure do |config|
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
   config.disable_monkey_patching!
-
-  if config.files_to_run.one?
-    config.default_formatter = 'doc'
-  end
+  config.default_formatter = 'doc' if config.files_to_run.one?
   config.profile_examples = 10
   config.order = :random
   Kernel.srand config.seed
