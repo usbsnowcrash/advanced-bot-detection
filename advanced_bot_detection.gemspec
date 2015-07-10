@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'json', '~> 1.8'
   s.add_development_dependency 'rspec', '~> 3.0'
   s.add_development_dependency 'codeclimate-test-reporter'
+  s.add_development_dependency 'simplecov'
   s.add_development_dependency 'pry'
   s.add_development_dependency 'webmock', '~> 1.21'
 end
