@@ -2,4 +2,5 @@ scss:
   enabled: false
 
 ruby:
+  enabled: true
   config_file: .rubocop.yml
