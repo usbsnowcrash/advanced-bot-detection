@@ -1,5 +1,5 @@
 require 'webmock/rspec'
-WebMock.disable_net_connect!(:allow => 'codeclimate.com')
+WebMock.disable_net_connect!(allow: 'codeclimate.com')
 
 require 'simplecov'
 require 'codeclimate-test-reporter'

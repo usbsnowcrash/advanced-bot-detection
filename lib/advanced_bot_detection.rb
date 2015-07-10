@@ -43,6 +43,22 @@ module AdvancedBotDetection
       test(user_agent_string).spam?
     end
 
+    def mobile_browser?(user_agent_string)
+      test(user_agent_string).mobile_browser?
+    end
+
+    def tablet?(user_agent_string)
+      test(user_agent_string).tablet?
+    end
+
+    def phone?(user_agent_string)
+      test(user_agent_string).phone?
+    end
+
+    def mobile?(user_agent_string)
+      test(user_agent_string).mobile?
+    end
+
     private
 
     def test(user_agent_string)

@@ -2,6 +2,7 @@ Version History
 ====
     * All Version bumps are required to update this file as well!!
 ----
+* 0.6.0 Added some missing convenience methods on the AdvancedBotDetection module and got code coverage to 100%
 * 0.5.0 Updated UA list, actual rspec testing, removed description as something that can come back from a match
         (this is because we now match multiple types at one time)
 * 0.4.0 Adding in mobile detection features
