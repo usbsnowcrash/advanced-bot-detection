@@ -10,9 +10,9 @@ module AdvancedBotDetection
     def agents
       agents = []
 
-      parse(agents,'browsers','mobile_browser')
-      parse(agents,'tablets','tablet')
-      parse(agents,'phones','phone')
+      parse(agents, 'browsers', 'mobile_browser')
+      parse(agents, 'tablets', 'tablet')
+      parse(agents, 'phones', 'phone')
 
       agents
     end
